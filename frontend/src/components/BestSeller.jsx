@@ -48,10 +48,11 @@ const BestSeller = () => {
   // ];
 
   const [products, setProducts] = useState([]);
-
+  const BACKEND_URL =
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/products")
+      .get(`${BACKEND_URL}/api/products`)
       .then((res) => {
         setProducts(res.data.slice(0, 10)); // Assuming you want the first 5 products
         // console.log(res.data[0].variants[0].price);
