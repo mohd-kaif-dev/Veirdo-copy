@@ -12,6 +12,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the Shopify API Server");
+})
+
 // Express route to get Shopify Products
 app.get("/api/products", async (req, res) => {
     try {
