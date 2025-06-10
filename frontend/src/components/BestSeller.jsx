@@ -50,14 +50,23 @@ const BestSeller = () => {
   const [products, setProducts] = useState([]);
   const BACKEND_URL =
     import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+
+  const [isLoading, setIsLoading] = useState(false);
+  const fetchProducts = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get(`${BACKEND_URL}/api/products`);
+      // Assuming you want the first 10 products for bestsellers
+      setProducts(response.data.slice(0, 10));
+    } catch (error) {
+      // Handle error appropriately
+      console.error("Error fetching products in Bestseller:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
   useEffect(() => {
-    axios
-      .get(`${BACKEND_URL}/api/products`)
-      .then((res) => {
-        setProducts(res.data.slice(0, 10)); // Assuming you want the first 5 products
-        // console.log(res.data[0].variants[0].price);
-      })
-      .catch((err) => console.error(err));
+    fetchProducts();
   }, []);
 
   return (
@@ -65,7 +74,7 @@ const BestSeller = () => {
       <h1 className="font-[soraSemibold] text-[18px] uppercase">
         Our Bestseller
       </h1>
-      <ProductSlider products={products} />
+      <ProductSlider products={products} isLoading={isLoading} />
       <div class="flex justify-center  pr-4 lg:pr-0  mt-[16px] lg:mt-6 w-full">
         <a class="flex items-center w-full lg:w-1/4" href="#">
           <div class="flex justify-center cursor-pointer h-12 shop-all-button_wrapper w-full ">
