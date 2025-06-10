@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "Onest-semibold";
+  src: url(/fonts/Onest-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: benzinBold;
+  src: url(/fonts/benzin-bold.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: benzinExtrabold;
+  src: url(/fonts/benzin-extrabold.woff2) format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: ibmRegular;
+  src: url(/fonts/ibm-regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: ibmMedium;
+  src: url(/fonts/ibm-medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: ibmSemiBold;
+  src: url(/fonts/ibm-semibold.woff2) format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: ibmBold;
+  src: url(/fonts/ibm-bold.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: soraSemiBold;
+  src: url(/fonts/Sora-SemiBold.woff2) format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+}
+
+.shop-all-button_wrapper {
+  background-color: #00f092;
+  border: 0.5px solid #323935;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px #fbb606;
+  transition: box-shadow 0.1s, font-size 0.1s;
+}
+.shop-all-button_wrapper {
+  color: #121212;
+  font-size: 14px;
+}
+
+@media (min-width: 1024px) {
+  .shop-all-button_wrapper {
+    font-size: 16px;
+  }
+}
+
+.text-title {
+  font-family: soraSemiBold;
+  text-align: center;
+  font-size: 12px;
+  color: #1a1e31;
+}
+@media screen and (min-width: 768px) {
+  .text-title {
+    font-family: soraSemiBold;
+    text-align: center;
+    font-size: 18px;
+    color: #1a1e31;
+  }
+}
+
+.popup-feature-image-height {
+  height: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .top-layout-section {
+    margin-top: 56px;
+    margin-bottom: 0px;
+    margin-right: 72px;
+    margin-left: 72px;
+  }
+}
+
+.cards-backgroundDesktop {
+  background-image: url("//veirdo.in/cdn/shop/files/about_us_bg.png?v=1707820408");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 10px;
+}
+.cards-footer-backgroundDesktop {
+  background-image: url("./assets/about_us_newpng.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-size: cover;
+}
+
+.footer-links-body-content a:hover {
+  text-decoration: underline !important;
+}
